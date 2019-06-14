@@ -1,0 +1,77 @@
+{
+  "name": "material-input-chips",
+  "version": "1.5.0",
+  "description": "A chip input field using Material-UI@next.",
+  "homepage": "https://rodrigonehring.github.io/material-input-chips/styleguide/",
+  "main": "dist/material-input-chips.js",
+  "author": "Rodrigo Eduardo Nehring",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigonehring/material-input-chips.git"
+  },
+  "scripts": {
+    "build": "npm run clean && mkdir dist && npm run build:dist",
+    "build:dist": "NODE_ENV=production webpack",
+    "prepublish": "npm run build",
+    "clean": "rm -rf dist",
+    "test": "eslint src",
+    "start": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+  },
+  "keywords": [
+    "react",
+    "material",
+    "chip",
+    "input",
+    "tags"
+  ],
+  "babel": {
+    "presets": [
+      "react",
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "material-ui": "^1.0.0-beta.24",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-styleguidist": "^6.0.31",
+    "webpack": "^3.8.1",
+    "webpack-bundle-size-analyzer": "^2.7.0"
+  },
+  "peerDependencies": {
+    "material-ui": ">= 1.0.0",
+    "react": "^15.6.1 || ^16.0.0",
+    "react-dom": "^15.6.1 || ^16.0.0"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.0.8",
+    "fuse.js": "^3.2.0"
+  }
+}
